@@ -27,11 +27,11 @@ public class Seat {
     }
 
     public void setNum(int num) {
-        if (num > 0){
-        this.num = num;
-        } else {
+        if (num <= 0){
             throw new IllegalArgumentException("invalid data");
         }
+
+        this.num = num;
     }
 
 }

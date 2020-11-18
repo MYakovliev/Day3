@@ -1,10 +1,13 @@
 package by.epam.tasks.task3.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PassengerTrain {
     private String destination;
     private int[] departureTime;
     private int num;
-    private Carriage[] carriages;
+    private List<Carriage> carriages;
 
     public PassengerTrain(String destination, int departureHour, int departureMinute, int num, int carriageCount) {
         setDestination(destination);
@@ -25,17 +28,17 @@ public class PassengerTrain {
         }
     }
 
-    public Carriage[] getCarriages() {
+    public List<Carriage> getCarriages() {
         return carriages;
     }
 
     public void setCarriages(int carriageCount) {
-        carriages = new Carriage[carriageCount];
+        carriages = new ArrayList<>();
         for (int i = 0; i < carriageCount; i++) {
             if (i < carriageCount / 3) {
-                carriages[i] = new Carriage(i+1, "business");
+                carriages.add(new Carriage(i + 1, CarriageTypes.BUSINESS));
             } else {
-                carriages[i] = new Carriage(i+1, "econom");
+                carriages.add( new Carriage(i + 1, CarriageTypes.ECONOM));
             }
         }
 

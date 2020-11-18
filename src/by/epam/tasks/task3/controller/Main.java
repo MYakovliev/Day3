@@ -21,7 +21,7 @@ public class Main {
             sb.append(reports.trainsToDestinationReport(trains));
             sb.append(reports.trainsToDestinationReportAfterTime(trains));
         } catch (Exception e){
-            output.consolePrintLine(e.getMessage());
+            output.consolePrintLine(e.toString());
         } finally {
             output.consolePrintLine(sb);
         }
