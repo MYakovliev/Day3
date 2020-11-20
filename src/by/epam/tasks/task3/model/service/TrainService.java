@@ -10,9 +10,10 @@ import java.util.Optional;
 
 public class TrainService {
     final static int MINUTES_IN_HOUR = 60;
+
     public Optional<PassengerTrain> findClosest(String destination, int[] time, PassengerTrain ...trains){
         int timeDifference = -1;
-        Optional<PassengerTrain> result = null;
+        Optional<PassengerTrain> result = Optional.empty();
         for(PassengerTrain train : trains){
             if (train.getDestination().equals(destination)){
                 int[] departureTime = train.getDepartureTime();
